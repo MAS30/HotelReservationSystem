@@ -5,7 +5,7 @@ public class RoomTypeTest {
 
     @Test
     void shouldCreateValidRoomType() {
-        RoomType type = new RoomType("Deluxe", 3000);
+        RoomType type = new RoomType("Deluxe", 5000);
         assertNotNull(type);
     }
 
