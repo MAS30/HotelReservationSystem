@@ -1,3 +1,5 @@
+import java.time.LocalDate;
+
 public class Hotel {
 
     private String name;
@@ -9,11 +11,19 @@ public class Hotel {
         this.name = name;
     }
 
-    public void createReservation() {
-        // reservation creation logic later
+    public Reservation createReservation(LocalDate startDate,
+                                         LocalDate endDate,
+                                         int reservationNumber) {
+
+        return new Reservation(
+                LocalDate.now(),
+                startDate,
+                endDate,
+                reservationNumber
+        );
     }
 
     public boolean available() {
-        return true;
+        return true; // simplified for now
     }
 }

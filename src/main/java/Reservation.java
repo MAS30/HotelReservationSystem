@@ -15,6 +15,9 @@ public class Reservation {
         if (reservationDate == null || startDate == null || endDate == null) {
             throw new IllegalArgumentException("Dates cannot be null");
         }
+        if (endDate.isBefore(startDate)) {
+            throw new IllegalArgumentException("End date cannot be before start date");
+        }
         if (number <= 0) {
             throw new IllegalArgumentException("Reservation number must be positive");
         }
@@ -25,7 +28,7 @@ public class Reservation {
         this.number = number;
     }
 
-    public void create() {
-        // reservation creation logic later
+    public int getNumber() {
+        return number;
     }
 }

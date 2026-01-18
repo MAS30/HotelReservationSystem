@@ -1,3 +1,5 @@
+import java.time.LocalDate;
+
 public class HotelChain {
 
     private String name;
@@ -9,39 +11,33 @@ public class HotelChain {
         this.name = name;
     }
 
-    // --- Operations from UML (no heavy logic yet) ---
+    public Reservation makeReservation(Hotel hotel,
+                                       LocalDate startDate,
+                                       LocalDate endDate) {
 
-    public void makeReservation() {
-        // will be implemented later
+        if (hotel == null) {
+            throw new IllegalArgumentException("Hotel cannot be null");
+        }
+
+        if (!hotel.available()) {
+            throw new IllegalStateException("Hotel not available");
+        }
+
+        // simple reservation number (for demo)
+        int reservationNumber = (int) (Math.random() * 1000) + 1;
+
+        return hotel.createReservation(startDate, endDate, reservationNumber);
     }
 
     public void cancelReservation() {
-        // will be implemented later
+        // later
     }
 
     public void checkInGuest() {
-        // will be implemented later
+        // later
     }
 
     public void checkOutGuest() {
-        // will be implemented later
-    }
-
-    // --- Guard methods from UML (simple stubs) ---
-
-    private boolean canMakeReservation() {
-        return true;
-    }
-
-    private boolean canCancelReservation() {
-        return true;
-    }
-
-    private boolean canCheckInGuest() {
-        return true;
-    }
-
-    private boolean canCheckOutGuest() {
-        return true;
+        // later
     }
 }
