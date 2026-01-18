@@ -1,18 +1,32 @@
-## Getting Started
+# Hotel Reservation System
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+## Overview
+This project implements a simplified Hotel Reservation System based on
+UML structural and behavioral models. The system follows object-oriented
+design principles and demonstrates reservation, check-in, and check-out
+workflows.
 
-## Folder Structure
+## Design Reference
+- Structural Design Model (Figure 18)
+- Room State Chart (Figure 19)
 
-The workspace contains two folders by default, where:
+## Key Features
+- Room state management (FREE → RESERVED → OCCUPIED)
+- Reservation creation and cancellation
+- Guest check-in and check-out
+- Input validation via domain exceptions
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+## Testing
+JUnit 5 was used to verify system correctness:
+- Normal reservation flows
+- Boundary conditions
+- Invalid state transitions
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+All tests pass successfully (Green Bar).
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
-
-## Dependency Management
-
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+## Execution
+The `Main` class demonstrates a complete use case:
+1. Room reservation
+2. Guest check-in
+3. Guest check-out
+4. State transitions logged at runtime

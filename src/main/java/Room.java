@@ -24,6 +24,7 @@ public class Room {
             throw new IllegalStateException("Room is not free");
         }
         state = RoomState.RESERVED;
+        System.out.println("Room " + number + " state changed to RESERVED");
     }
 
     public void checkIn(Guest guest) {
@@ -32,6 +33,7 @@ public class Room {
         }
         this.occupant = guest;
         state = RoomState.OCCUPIED;
+        System.out.println("Room " + number + " state changed to OCCUPIED");
     }
 
     public void checkOut() {
@@ -40,6 +42,7 @@ public class Room {
         }
         this.occupant = null;
         state = RoomState.FREE;
+        System.out.println("Room " + number + " state changed to FREE");
     }
 
     public RoomState getState() {
