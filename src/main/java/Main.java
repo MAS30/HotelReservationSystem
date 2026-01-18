@@ -1,12 +1,14 @@
 public class Main {
     public static void main(String[] args) {
 
-        HotelChain chain = new HotelChain();
-        Hotel hotel = new Hotel();
-        Reservation reservation = new Reservation(828);
+        HotelChain chain = new HotelChain("Demo Chain");
+        Room room = new Room(101);
+        Guest guest = new Guest("Affan");
 
-        chain.cancelReservation(hotel, reservation);
+        room.reserve();               // FREE → RESERVED
+        chain.checkInGuest(room, guest);  // RESERVED → OCCUPIED
+        chain.checkOutGuest(room);        // OCCUPIED → FREE
 
-        System.out.println("Commit 3: cancelReservation executed");
+        System.out.println("Check-in and check-out executed");
     }
 }
