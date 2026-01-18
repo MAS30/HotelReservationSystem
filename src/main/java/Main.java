@@ -1,19 +1,12 @@
-import java.time.LocalDate;
-
 public class Main {
-
     public static void main(String[] args) {
 
-        HotelChain chain = new HotelChain("Demo Chain");
-        Hotel hotel = new Hotel("Four Seasons");
+        HotelChain chain = new HotelChain();
+        Hotel hotel = new Hotel();
+        Reservation reservation = new Reservation(828);
 
-        Reservation reservation = chain.makeReservation(
-                hotel,
-                LocalDate.of(2026, 2, 1),
-                LocalDate.of(2026, 2, 5)
-        );
+        chain.cancelReservation(hotel, reservation);
 
-        System.out.println("Reservation created with number: "
-                + reservation.getNumber());
+        System.out.println("Commit 3: cancelReservation executed");
     }
 }
